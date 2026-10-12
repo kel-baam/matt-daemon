@@ -1,0 +1,22 @@
+#ifndef TINTIN_REPORTER_HPP
+#define TINTIN_REPORTER_HPP
+
+#include <string>
+#include <fstream>
+
+class Tintin_reporter
+{
+public:
+    Tintin_reporter();       
+    ~Tintin_reporter();
+    void log(const std::string &level, const std::string &message);
+
+private:
+    Tintin_reporter(const Tintin_reporter &);
+    Tintin_reporter &operator=(const Tintin_reporter &);
+
+    std::string _timestamp() const;
+    std::ofstream _file;                
+};
+
+#endif
